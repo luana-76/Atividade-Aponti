@@ -118,7 +118,7 @@ footer{margin-top:90px;background:var(--abyss);color:#8ea8ba;padding:30px 0;font
 <section class="s" id="deploy"><div class="w rv"><h2>Docker e deploy no Render</h2>
 <p>A página roda em um Nginx dentro de um contêiner. O Render informa a porta pela variável <code>PORT</code>, e o modelo de configuração do Nginx a usa.</p>
 <pre id="df">FROM nginx:1.27-alpine
-ENV PORT=10000 
+ENV PORT=10000
 COPY default.conf.template /etc/nginx/templates/default.conf.template
 COPY index.html /usr/share/nginx/html/index.html
 EXPOSE 10000</pre>
