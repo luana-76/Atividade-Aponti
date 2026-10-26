@@ -115,6 +115,15 @@ footer{margin-top:90px;background:var(--abyss);color:#8ea8ba;padding:30px 0;font
 
 <section class="s" id="quiz"><div class="w rv"><h2>Teste-se antes de apresentar</h2><div class="card" id="qz"></div></div></section>
 
+<section class="s" id="deploy"><div class="w rv"><h2>Docker e deploy no Render</h2>
+<p>A página roda em um Nginx dentro de um contêiner. O Render informa a porta pela variável <code>PORT</code>, e o modelo de configuração do Nginx a usa.</p>
+<pre id="df">FROM nginx:1.27-alpine
+ENV PORT=10000
+COPY default.conf.template /etc/nginx/templates/default.conf.template
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 10000</pre>
+<div class="row"><button id="cp">Copiar Dockerfile</button></div>
+<div class="steps"><div class="card"><b class="d">1</b><p>Suba os arquivos em um repositório do GitHub.</p></div><div class="card"><b class="d">2</b><p>No Render, crie um Web Service e escolha Docker.</p></div><div class="card"><b class="d">3</b><p>Conecte o repositório e faça o deploy. O link público é a entrega.</p></div></div></div></section>
 <footer><div class="w">StreamGlobal · Desafio de Arquitetura e Nuvem · Grupo 4</div></footer>
 
 <script>
